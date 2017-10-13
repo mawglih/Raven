@@ -14,13 +14,14 @@ export const Yelp = {
             })
             .then(jsonResponse => {
                 accessToken = jsonResponse.access_token;
+                console.log('Access token: ',accessToken);
             })
     },
     search(term, location, sortBy) {
         return Yelp.getAccessToken().then(res => {
             return fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=${term}&location=${location}N&sort_by=${sortBy}`, {
                     headers: {
-                        Authoriztion: `Bearer ${accessToken}`
+                        Authorization: `Bearer ${accessToken}`
                     }
                 })
                 .then(response => {

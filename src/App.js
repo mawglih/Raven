@@ -29,12 +29,13 @@ class App extends Component {
   }
 
   searchYelp(term, location, sortBy) {
-    let businesses;
-    businesses = Yelp.search(term, location, sortBy)
-    .then(console.log(businesses))
-    //.then(businesses => {
-    //  this.setState({businesses});
-    //})
+    
+    Yelp.search(term, location, sortBy)
+    //.then(console.log(businesses))
+    .then(businesses => {
+      this.setState({businesses})
+  })
+     
   }
 
   render() {
