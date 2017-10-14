@@ -20,6 +20,8 @@ class SearchBar extends Component {
         this.handleSortByChange = this.handleSortByChange.bind(this);
         this.handleTermChange = this.handleTermChange.bind(this);
         this.handleSearch = this.handleSearch.bind(this);
+        this.getSortByClass = this.getSortByClass.bind(this);
+        this.renderSortByOptions = this.renderSortByOptions.bind(this);
     }
     getSortByClass(sortByOption){
         if(this.state.sortBy === sortByOption) {
@@ -31,7 +33,7 @@ class SearchBar extends Component {
 
     handleSortByChange(sortByOption){
         this.setState({
-            sortBy: this.sortByOption
+            sortBy: sortByOption
         });
     }
 

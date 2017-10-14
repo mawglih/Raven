@@ -15,6 +15,7 @@
     margin-bottom: .5rem;
     font-size: 1.2rem;
     font-weight: 600;
+    color:#1C11B6;
 }
 
 .Business-information {
@@ -32,6 +33,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-style: italic;
+    color:#1C11B6;
 }
 
 .Business-reviews {
@@ -39,14 +42,10 @@
     flex-direction: column;
     justify-content: space-between;
     text-align: right;
+    color: darkmagenta
 }
 
 .Business-reviews h3 {
-    color: #CCA353;
+    color: #1C11B6;
     font-weight: 600;
-}
-
-.Business-reviews .rating {
-    font-size: .88rem;
-    line-height: 1rem;
 }

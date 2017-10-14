@@ -9,12 +9,10 @@ export const Yelp = {
         }
         return fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/oauth2/token?grant_type=client_credentials&client_id=${clientId}&client_secret=${clientSecret}`, { method: 'POST' })
             .then(response => {
-                console.log('Fetch response: ',response);
                 return response.json();
             })
             .then(jsonResponse => {
                 accessToken = jsonResponse.access_token;
-                console.log('Access token: ',accessToken);
             })
     },
     search(term, location, sortBy) {
@@ -25,13 +23,13 @@ export const Yelp = {
                     }
                 })
                 .then(response => {
-                    console.log('Search response: ', response);
                     return response.json();
                 })
                 .then(jsonResponse => {
                     if (jsonResponse.businesses) {
                         return jsonResponse.businesses.map(business => {
-                            console.log('Business response: ', business);
+                            console.log(business);
+                            console.log(Object.values(business.categories));
                             return {
                                 id: business.id,
                                 imageSrc: business.image_url,
@@ -41,7 +39,7 @@ export const Yelp = {
                                 state: business.location.state,
                                 zipCode: business.location.zip_code,
                                 country: business.location.country,
-                                category: business.categories.alias,
+                                category:business.categories[0].title,
                                 rating: business.rating,
                                 reviewCount: business.review_count
                             }

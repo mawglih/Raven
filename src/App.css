@@ -3,6 +3,9 @@
 html {
     font-size: 18px;
 }
+body{
+    background-color: darkkhaki;
+}
 
 @media only screen and (max-width: 560px) {
     html {
@@ -39,8 +42,8 @@ input:focus {
 h1 {
     padding: .66rem 0;
     text-align: center;
-    background-color: #cca353;
+    background-color: darkgoldenrod;
     font-family: Poppins, sans-serif;
     font-size: 1.8rem;
-    color: #fff;
+    color: #1C11B6;
 }
